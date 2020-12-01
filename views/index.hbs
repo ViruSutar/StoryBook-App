@@ -1,0 +1,39 @@
+ <div class="container">
+        <h3 class="text-center p-3">Register Yourself</h3>
+        <div style="margin: 0 auto;" class="col-12 col-md-6 col-lg-5 p-5 customborder">
+
+            <form action="/auth/Register" method="POST">
+            {{#if message}}
+            <div class="alert alert-dismissible alert-danger">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    <strong>  {{message}} </strong>
+                </div>
+                {{/if}}
+                <div class="form-group">
+                    <label for="email">Enter Your Email</label>
+                    <input type="email" class="form-control" name="email" id="email" autocomplete="off"
+                        placeholder="Email" value="">
+                </div>
+                <div class="form-group">
+                    <label for="name">Choose A name</label>
+                    <input type="text" class="form-control" name="name" id="name" autocomplete="off"
+                        placeholder="name" value="">
+                </div>
+                <div class="form-group">
+                    <label for="password">Choose A Password</label>
+                    <input type="password" class="form-control" name="password" id="password" autocomplete="off"
+                        placeholder="Password">
+                </div>
+                <div class="form-group">
+                    <label for="Password">Confirm Your Password</label>
+                    <input type="password" class="form-control" name="ConfirmPassword" id="ConfirmPassword"
+                        autocomplete="off" placeholder="Confirm Password">
+                </div>
+                <div class="form-group">
+                    <input type="submit" class="btn btn-block btn-outline-primary" value="Register">
+                </div>
+                
+                <p>Already Registered ? <a class="card-link" href="/auth/login">LOGIN Here</a> </p>
+            </form>
+        </div>
+    </div>

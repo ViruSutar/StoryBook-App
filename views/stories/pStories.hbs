@@ -1,0 +1,26 @@
+<h1>Stories</h1>
+<div class="row">
+    {{#each stories}}
+    <div class="col s12 m4">
+        <div class="card">
+            <div class="card-image">
+                {{{editIcon user ../user _id}}} {{!-  if you want to parse html with handlebars you haVe to use Threeple curly braces-- !}}
+            </div>
+            <div class="card-content center-align">
+                <h5>{{title}}</h5>
+                <p>{{stripTags (truncate body 150)}}</p>  {{!- we have use here truncate  helper and provide 2 arguments  --!}}
+                <br>
+                <div class="chip">
+                    {{!-- <img src="{{user.image}}" alt="">  we can acess image here in the stories because we have used objectID and link USer model with it --}}
+                    <a href="/stories/user/{{user._id}}">{{user.name}}</a>
+                </div>
+            </div>
+            <div class="card-action center-align">
+                <a href="/stories/{{_id}}" class="btn grey">Read More</a>
+            </div>
+        </div>
+    </div>
+    {{else}}
+    <P>No stories to display</P>
+    {{/each}}
+</div>
