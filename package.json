@@ -4,7 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": " nodemon app",
+    "start": " node app",
+    "dev": " nodemon app",
     "start:prod": "NODE_ENV=production nodemon app.js"
   },
   "author": "",
@@ -35,5 +36,8 @@
     "passport-auth0": "^1.4.0",
     "passport-local": "^1.0.0",
     "validator": "^13.1.17"
+  },
+  "engines": {
+    "node": ">=10.0.0"
   }
 }
