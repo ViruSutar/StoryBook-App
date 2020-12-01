@@ -17,7 +17,7 @@ exports.createStories=async(req,res)=>{
         
         res.redirect('/dashboard')
     }catch(err){
-        console.log(err);
+        // console.log(err);
 
     }
    
@@ -53,7 +53,7 @@ exports.ShowStory=async(req,res)=>{
             story
         })
     } catch (err) {
-        console.error(err)
+        // console.error(err)
     }
 }
 
@@ -73,8 +73,8 @@ exports.editPage=async(req,res)=>{
     const storyuser=story.user.toString();
     const requser=req.user.id.toString();
     if(storyuser !== requser){
-        console.log(storyuser )
-        console.log( requser)
+        // console.log(storyuser )
+        // console.log( requser)
         res.redirect('/stories')
     }
     else{
@@ -84,7 +84,7 @@ exports.editPage=async(req,res)=>{
     })
     }}
    catch(err){
-      console.log(err)
+    //   console.log(err)
    }
 
 }
@@ -123,7 +123,7 @@ try {
         stories
     })
 } catch (err) {
-    console.error(err)
+    // console.error(err)
 }
 }
 
@@ -133,6 +133,6 @@ exports.DeleteStories=async(req,res)=>{
         await Story.remove({_id:req.params.id})
         res.redirect('/dashboard')
     } catch (err) {
-        console.error(err)
+        // console.error(err)
     }
 }

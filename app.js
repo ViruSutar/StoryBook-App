@@ -6,6 +6,7 @@ const cookieParser = require('cookie-parser')
 const exphbs=require('express-handlebars');
 const methodOverride=require('method-override')
 const globalErrorHandler=require('./controllers/errorController')
+const compression=require('compression')
 const connectDB=require('./config/db');
 const passport = require('passport');
 const session=require('express-session')
@@ -78,6 +79,9 @@ app.use(function(req,res,next){
   next()
 })
 
+
+//compression
+app.use(compression())
 
 // flash
 // This should be before express-session
